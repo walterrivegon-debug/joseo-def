@@ -1,85 +1,303 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VSL - Posicionamiento en Google Chile</title>
-  <style>
-    body {font-family:'Segoe UI',Arial,sans-serif;margin:0;padding:0;background:#f9f9f9;color:#222;}
-    header {background:linear-gradient(135deg,#0d47a1,#1976d2);color:#fff;padding:3rem 2rem;text-align:center;}
-    section {max-width:900px;margin:2rem auto;padding:2rem;background:#fff;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.1);
-             opacity:0;transform:translateY(40px);transition:opacity 0.6s ease,transform 0.6s ease;}
-    section.visible {opacity:1;transform:translateY(0);animation:fadeInUp 0.8s ease forwards;}
-    h2 {color:#0d47a1;margin-bottom:1rem;border-left:4px solid #1976d2;padding-left:0.5rem;}
-    .cta {text-align:center;margin-top:2rem;}
-    .cta a {display:inline-block;background:linear-gradient(135deg,#0d47a1,#1976d2);color:#fff;padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:bold;font-size:1.1rem;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
-    .cta a:hover {transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,0.3);}
-    .video-container {max-width:900px;margin:2rem auto;border-radius:12px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.2);}
-    .video-container iframe {width:100%;height:500px;border:0;}
-    @keyframes fadeInUp {from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO High-Ticket | Posicionamiento Estratégico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066FF; /* Azul neón tipo BlueHackers */
+            --primary-glow: rgba(0, 102, 255, 0.4);
+            --bg-dark: #000000;
+            --bg-card: #0A0A0A;
+            --text-main: #FFFFFF;
+            --text-dim: #A1A1AA;
+            --border: #1F1F23;
+            --accent-green: #00F5A0; /* Para casos de éxito */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-dark);
+            scroll-behavior: smooth;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 80px 0; }
+        .text-center { text-align: center; }
+
+        /* Estilo de Etiquetas (como en las capturas) */
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 50px;
+            background: var(--border);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        h1 { 
+            font-size: clamp(2.2rem, 5vw, 4rem); 
+            font-weight: 900; 
+            line-height: 1.1; 
+            margin-bottom: 25px; 
+            letter-spacing: -0.03em;
+        }
+
+        h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 40px; color: #fff; }
+
+        /* Botón de Alta Conversión (Estilo BlueHackers/DocuPro) */
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 22px 45px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px var(--primary-glow);
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 35px var(--primary-glow);
+            background: #1a75ff;
+        }
+
+        /* VSL Container (Referencia BlueHackers) */
+        .vsl-container {
+            margin: 40px auto;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--border);
+            box-shadow: 0 0 50px rgba(0, 102, 255, 0.15);
+            background: #111;
+        }
+
+        .vsl-ratio { padding-top: 56.25%; position: relative; }
+        .vsl-ratio iframe, .vsl-placeholder {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        /* Tarjetas de Dolor/Mitos (Referencia Axis) */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .card:hover { border-color: var(--primary); }
+
+        .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; }
+
+        /* Sección de Filtro (Referencia BlueHackers - Caja Roja) */
+        .filter-warning {
+            border: 2px dashed #ff4d4d;
+            background: rgba(255, 77, 77, 0.05);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+            color: #ff4d4d;
+            font-weight: 600;
+        }
+
+        /* FAQ (Acordeón) */
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-btn {
+            width: 100%; padding: 25px 0; background: none; border: none;
+            color: white; text-align: left; font-size: 1.2rem; font-weight: 700;
+            cursor: pointer; display: flex; justify-content: space-between;
+        }
+        .faq-content { padding-bottom: 25px; color: var(--text-dim); display: none; }
+
+        footer { padding: 40px; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>¿Tu web vende, pero no escala?</h1>
-  <p>Descubre cómo transformar tu página en un canal estable de clientes.</p>
-  <div class="cta"><a href="https://api.leadconnectorhq.com/widget/booking/atk9MyQ0ar5I3bvfqOFr" target="_blank">Agendar Auditoría</a></div>
-</header>
+    <section class="section-padding text-center">
+        <div class="container">
+            <span class="badge">Estrategia SEO de Alto Impacto</span>
+            <h1>Tu página web podría estar vendiendo mucho más de lo que vende hoy</h1>
+            <p style="color: var(--text-dim); font-size: 1.3rem; max-width: 800px; margin: 0 auto 40px;">
+                Si ya tienes web, pero dependes de anuncios o no logras escalar ventas, el problema no es tu negocio… es cómo estás apareciendo en Google.
+            </p>
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/_ewwO0Y1zb4" title="YouTube video player" allowfullscreen></iframe>
-</div>
+            <div class="vsl-container">
+                <div class="vsl-ratio">
+                    <div class="vsl-placeholder" style="display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);">
+                        <div style="text-align:center;">
+                            <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 50%; margin: 0 auto 20px; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+                                <div style="width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid white; margin-left: 5px;"></div>
+                            </div>
+                            <p style="font-weight: bold; letter-spacing: 1px;">PULSA AQUÍ PARA ACTIVAR EL SONIDO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<section><h2>Apertura</h2><p>Si ya tienes página web, pero las ventas no crecen como deberían… probablemente el problema no es tu negocio.</p>
-<div class="cta"><a href="https://api.leadconnectorhq.com/widget/booking/atk9MyQ0ar5I3bvfqOFr" target="_blank">Agendar Auditoría</a></div></section>
+            <a href="#booking" class="cta-button">Agendar auditoría SEO</a>
+        </div>
+    </section>
 
-<section><h2>Validación del Contexto</h2><p>Ya invertiste en anuncios. Tu web genera ventas, pero no escala. Hay meses buenos y meses malos. Y en el fondo, sientes que tu página podría rendir mucho más… pero no tienes control real sobre tu flujo de clientes.</p>
-<div class="cta"><a href="https://api.leadconnectorhq.com/widget/booking/atk9MyQ0ar5I3bvfqOFr" target="_blank">Agendar Auditoría</a></div></section>
+    <section class="section-padding" style="background: #050505;">
+        <div class="container">
+            <h2 class="text-center">Si ya tienes página web, probablemente te pasa esto:</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <p>Invertiste en diseño y desarrollo… pero la web no se convirtió en el canal de ventas que esperabas.</p>
+                </div>
+                <div class="card">
+                    <p>Probaste anuncios. Funcionan, pero cuando bajas la inversión, los resultados desaparecen.</p>
+                </div>
+                <div class="card">
+                    <p>Sabes que hay demanda, pero tu competencia se está llevando los clics que te pertenecen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section><h2>El Problema Real</h2><p>No estás apareciendo en búsquedas clave. Tu web no está alineada con cómo buscan los clientes. Estás compitiendo pagando, no posicionándote.</p></section>
+    <section class="section-padding">
+        <div class="container text-center">
+            <h2>El problema no es tu negocio,<br><span style="color: var(--primary);">es cómo estás apareciendo</span></h2>
+            <p style="max-width: 800px; margin: 0 auto; color: var(--text-dim);">
+                No se trata de tener una página web "bonita". Se trata de aparecer cuando alguien ya tiene intención de comprar. Si no estás en Google en ese momento, simplemente no existes para el cliente.
+            </p>
+            
+            <div class="filter-warning" style="max-width: 800px; margin: 60px auto;">
+                IMPORTANTE: Si NO vendes servicios de alto valor o no estás dispuesto a invertir en el largo plazo, este sistema NO es para ti.
+            </div>
+        </div>
+    </section>
 
-<section><h2>Cambio de Perspectiva</h2><p>No se trata de traer más tráfico… se trata de aparecer cuando alguien ya quiere comprar.</p></section>
+    <section class="section-padding bg-light" style="background: #050505;">
+        <div class="container">
+            <h2 class="text-center">Lo que la mayoría entiende mal sobre el SEO</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>"SEO es rápido"</h3>
+                    <p>Falso. El SEO es un activo que se construye. Es acumulativo y su valor crece con el tiempo.</p>
+                </div>
+                <div class="card">
+                    <h3>"Solo palabras clave"</h3>
+                    <p>No. El SEO moderno es intención de búsqueda, autoridad y experiencia de usuario.</p>
+                </div>
+                <div class="card">
+                    <h3>"Más tráfico = más ventas"</h3>
+                    <p>No buscamos visitas vacías. Buscamos atraer al cliente que ya tiene la tarjeta en la mano.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section><h2>Derribando Creencias sobre SEO</h2>
-<ul>
-  <li><strong>SEO no es solo palabras clave:</strong> Parte entendiendo cómo busca el cliente correcto y cómo está estructurada tu web.</li>
-  <li><strong>SEO no es traer más tráfico:</strong> Me interesa que llegue gente que realmente está buscando lo que vendes.</li>
-  <li><strong>Si no es rápido, no sirve:</strong> El SEO construye una base que se fortalece con el tiempo.</li>
-  <li><strong>Más tráfico ≠ más ventas:</strong> Hay webs con mucho tráfico y pocas ventas, y otras con menos tráfico pero búsquedas precisas que convierten mejor.</li>
-</ul>
-<div class="cta"><a href="https://api.leadconnectorhq.com/widget/booking/atk9MyQ0ar5I3bvfqOFr" target="_blank">Agendar Auditoría</a></div></section>
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="text-center">Cómo funciona nuestro ecosistema</h2>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div style="margin-bottom: 30px; display: flex; gap: 20px;">
+                    <div style="color: var(--primary); font-weight: 900; font-size: 2rem;">01</div>
+                    <div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 10px;">Análisis de Intención</h4>
+                        <p style="color: var(--text-dim);">Detectamos cómo busca realmente tu cliente ideal antes de comprar.</p>
+                    </div>
+                </div>
+                <div style="margin-bottom: 30px; display: flex; gap: 20px;">
+                    <div style="color: var(--primary); font-weight: 900; font-size: 2rem;">02</div>
+                    <div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 10px;">Optimización Estructural</h4>
+                        <p style="color: var(--text-dim);">Convertimos tu web en una máquina preparada para Google y para la conversión.</p>
+                    </div>
+                </div>
+                <div style="margin-bottom: 30px; display: flex; gap: 20px;">
+                    <div style="color: var(--primary); font-weight: 900; font-size: 2rem;">03</div>
+                    <div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 10px;">Escalado de Autoridad</h4>
+                        <p style="color: var(--text-dim);">Te posicionamos como la opción #1 de tu mercado de forma orgánica.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="#booking" class="cta-button">QUIERO EMPEZAR EL PROCESO</a>
+            </div>
+        </div>
+    </section>
 
-<section><h2>SEO como Proceso</h2><p>Nosotros no trabajamos el SEO como tareas sueltas. Lo trabajamos como un proceso:</p>
-<ol><li>Entendemos cómo te busca la gente correcta.</li><li>Identificamos qué páginas tienen potencial real.</li><li>Optimizamos estructura, contenido e intención.</li><li>Construimos visibilidad con sentido.</li></ol></section>
+    <section class="section-padding" style="background: #050505;">
+        <div class="container">
+            <h2 class="text-center">Preguntas Frecuentes</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <button class="faq-btn">¿Cuánto tiempo demora ver resultados? <span>+</span></button>
+                    <div class="faq-content">El SEO es una estrategia de mediano a largo plazo. Las primeras señales aparecen en 90 días, pero el canal sólido se construye en 6-12 meses.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-btn">¿Sirve si ya hago anuncios? <span>+</span></button>
+                    <div class="faq-content">Es el complemento perfecto. El SEO reduce tu dependencia de los anuncios y baja tu costo de adquisición por cliente.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-btn">¿Es para cualquier negocio? <span>+</span></button>
+                    <div class="faq-content">No. Es para negocios que ya validaron su oferta, tienen una web funcional y quieren escalar seriamente.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section><h2>Métricas</h2><p>Las métricas importan, pero como señal de que la web está empezando a aparecer mejor, atraer búsquedas más alineadas y ganar terreno en Google. No buscamos inflar números, buscamos avance real.</p></section>
+    <section id="booking" class="section-padding text-center">
+        <div class="container">
+            <span class="badge" style="border-color: var(--accent-green); color: var(--accent-green);">Paso 2: Agenda tu auditoría</span>
+            <h2>¿Listo para dejar de depender de los anuncios?</h2>
+            <p style="margin-bottom: 40px; color: var(--text-dim);">Reserva una sesión estratégica para analizar tu caso puntual.</p>
+            
+            <div style="background: #0A0A0A; border: 1px solid var(--border); border-radius: 12px; height: 500px; display:flex; align-items:center; justify-content:center;">
+                <p style="color: #444;">[ AQUÍ VA TU CALENDLY O FORMULARIO ]</p>
+            </div>
+        </div>
+    </section>
 
-<section><h2>Ventaja Estratégica</h2><p>El SEO es una estrategia de mediano/largo plazo. Requiere meses de trabajo, es acumulativa y como la mayoría evita hacerlo bien, la competencia real es menor.</p></section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Posicionamiento Estratégico. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-<section><h2>Expectativas Reales</h2><p>No es inmediato. Primeras señales: 30–60 días. Resultados más sólidos: meses. Requiere consistencia.</p></section>
-
-<section><h2>Micro-Evidencia</h2><p>Ecommerce que pasan de depender de anuncios a generar tráfico constante desde Google.</p><p>Negocios de servicios que empiezan a recibir contactos sin invertir todos los días en publicidad.</p><p>Casos donde el tráfico orgánico se vuelve el canal más rentable.</p></section>
-
-<section><h2>Filtro de Cliente</h2><p>No es para quien no vende. No es para quien busca resultados rápidos. Es para negocios que ya están vendiendo y quieren escalar con un canal estable.</p></section>
-
-<section class="cta"><h2>Agenda tu Auditoría SEO</h2><p>Si quieres ver si esto aplica a tu web, puedes agendar una auditoría SEO. Revisamos tu caso y vemos si tiene sentido trabajar esto.</p>
-<a href="https://api.leadconnectorhq.com/widget/booking/atk9MyQ0ar5I3bvfqOFr" target="_blank">Agendar Auditoría</a></section>
-
-<script>
-  const sections = document.querySelectorAll("section");
-  const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.85;
-    sections.forEach(section => {
-      const boxTop = section.getBoundingClientRect().top;
-      if (boxTop < triggerBottom) {
-        section.classList.add("visible");
-      }
-    });
-  };
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
-</script>
-
+    <script>
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const isVisible = content.style.display === 'block';
+                document.querySelectorAll('.faq-content').forEach(c => c.style.display = 'none');
+                content.style.display = isVisible ? 'none' : 'block';
+            });
+        });
+    </script>
 </body>
 </html>
